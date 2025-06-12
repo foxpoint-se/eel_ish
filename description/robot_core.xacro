@@ -34,4 +34,32 @@
         </visual>
     </link>
 
+    <!-- PROPELLER LINK -->
+    <joint name="propeller_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="propeller" />
+        <origin xyz="-0.51 0 0" rpy="0 ${pi/2} 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="propeller">
+        <visual>
+            <geometry>
+                <box size="0.2 0.02 0.01" />
+            </geometry>
+            <material name="orange" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.2 0.02 0.01" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.001" ixy="0" ixz="0"
+                iyy="0.001" iyz="0"
+                izz="0.001" />
+        </inertial>
+    </link>
+
 </robot>
